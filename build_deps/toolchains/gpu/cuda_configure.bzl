@@ -55,6 +55,17 @@ _DEFAULT_CUDA_COMPUTE_CAPABILITIES = [
     "5.2",
 ]
 
+def to_list_of_strings(elements):
+    """Convert the list of ["a", "b", "c"] into '"a", "b", "c"'.
+    This is to be used to put a list of strings into the bzl file templates
+    so it gets interpreted as list of strings in Starlark.
+    Args:
+      elements: list of string elements
+    Returns:
+      single string of elements wrapped in quotes separated by a comma."""
+    quoted_strings = ["\"" + element + "\"" for element in elements]
+    return ", ".join(quoted_strings)
+
 def _get_python_bin(repository_ctx):
     """Gets the python bin path."""
     python_bin = repository_ctx.os.environ.get(_PYTHON_BIN_PATH)

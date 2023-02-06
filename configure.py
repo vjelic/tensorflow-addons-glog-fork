@@ -167,7 +167,7 @@ def create_build_configuration():
     if os.getenv("TF_NEED_CUDA", "0") == "1":
         print("> Building GPU (CUDA) & CPU ops")
         configure_cuda()
-    else if os.getenv("TF_NEED_ROCM", "0") == "1":
+    elif os.getenv("TF_NEED_ROCM", "0") == "1":
         print("> Building GPU (ROCM) & CPU ops")
         configure_rocm()
     else:
@@ -197,7 +197,7 @@ def configure_cuda():
         "build:cuda --crosstool_top=@ubuntu20.04-gcc9_manylinux2014-cuda11.2-cudnn8.1-tensorrt7.2_config_cuda//crosstool:toolchain"
     )
 
-def configure_cuda():
+def configure_rocm():
     write_action_env("TF_NEED_ROCM", "1")
     write("test --config=rocm")
     write("build --config=rocm")

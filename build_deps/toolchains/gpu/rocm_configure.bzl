@@ -13,21 +13,21 @@ load(
     "make_copy_dir_rule",
     "make_copy_files_rule",
     "to_list_of_strings",
-)
-load(
-    "//third_party/remote_config:common.bzl",
-    "config_repo_label",
-    "err_out",
-    "execute",
-    "files_exist",
-    "get_bash_bin",
-    "get_cpu_value",
-    "get_host_environ",
     "get_python_bin",
-    "raw_exec",
-    "realpath",
-    "which",
+    "get_cpu_value",
 )
+#load(
+#  "//third_party/remote_config:common.bzl",
+#    "config_repo_label",
+#    "err_out",
+#    "execute",
+#    "files_exist",
+#    "get_bash_bin",
+#    "get_host_environ",
+#    "raw_exec",
+#    "realpath",
+#    "which",
+#)
 
 
 _GCC_HOST_COMPILER_PATH = "GCC_HOST_COMPILER_PATH"
