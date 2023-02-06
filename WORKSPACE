@@ -1,6 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("//build_deps/tf_dependency:tf_configure.bzl", "tf_configure")
 load("//build_deps/toolchains/gpu:cuda_configure.bzl", "cuda_configure")
+load("//build_deps/toolchains/gpu:rocm_configure.bzl", "rocm_configure")
 
 http_archive(
     name = "cub_archive",
@@ -18,6 +19,7 @@ tf_configure(
 )
 
 cuda_configure(name = "local_config_cuda")
+rocm_configure(name = "local_config_rocm")
 
 http_archive(
     name = "org_tensorflow",

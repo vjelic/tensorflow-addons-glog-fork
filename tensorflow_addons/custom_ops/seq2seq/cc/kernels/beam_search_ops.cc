@@ -15,7 +15,7 @@ limitations under the License.
 
 #define EIGEN_USE_THREADS
 
-#if GOOGLE_CUDA
+#if GOOGLE_CUDA || TENSORFLOW_USE_ROCM
 #define EIGEN_USE_GPU
 #endif  // GOOGLE_CUDA
 
@@ -165,7 +165,7 @@ struct GatherTree<CPUDevice, int32> {
 
 }  // namespace functor
 
-#if GOOGLE_CUDA
+#if GOOGLE_CUDA || TENSORFLOW_USE_ROCM
 namespace functor {
 #define DECLARE_GPU_SPEC(T)                                            \
   template <>                                                          \

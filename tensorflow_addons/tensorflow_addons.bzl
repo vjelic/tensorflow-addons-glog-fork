@@ -1,12 +1,13 @@
 load("@local_config_tf//:build_defs.bzl", "CPLUSPLUS_VERSION", "D_GLIBCXX_USE_CXX11_ABI")
 load("@local_config_cuda//cuda:build_defs.bzl", "if_cuda", "if_cuda_is_configured")
+load("@local_config_rocm//rocm:build_defs.bzl", "if_rocm", "if_rocm_is_configured")
 
 def custom_op_library(
         name,
         srcs = [],
-        cuda_srcs = [],
+        gpu_srcs = [],
         deps = [],
-        cuda_deps = [],
+        gpu_deps = None,
         copts = [],
         **kwargs):
     deps = deps + [
@@ -14,28 +15,33 @@ def custom_op_library(
         "@local_config_tf//:tf_header_lib",
     ]
 
-    if cuda_srcs:
+    if not gpu_deps:
+        gpu_deps = []
+
+    if gpu_srcs:
         copts = copts + if_cuda(["-DGOOGLE_CUDA=1"])
-        cuda_copts = copts + if_cuda_is_configured([
+        copts = copts + if_rocm(["-DTENSORFLOW_USE_ROCM=1"])
+        gpu_copts = copts + if_cuda_is_configured([
             "-x cuda",
             "-nvcc_options=relaxed-constexpr",
             "-nvcc_options=ftz=true",
         ])
-        cuda_deps = deps + if_cuda_is_configured(cuda_deps) + if_cuda_is_configured([
+        gpu_deps = gpu_deps + if_cuda_is_configured([
             "@local_config_cuda//cuda:cuda_headers",
             "@local_config_cuda//cuda:cudart_static",
         ])
         basename = name.split(".")[0]
         native.cc_library(
             name = basename + "_gpu",
-            srcs = cuda_srcs,
-            deps = cuda_deps,
-            copts = cuda_copts,
+            srcs = gpu_srcs,
+            deps = gpu_deps,
+            copts = gpu_copts,
             alwayslink = 1,
             **kwargs
         )
-        deps = deps + if_cuda_is_configured([":" + basename + "_gpu"])
+        deps = deps + [":" + basename + "_gpu"]
 
+    copts = copts + select({
     copts = copts + select({
         "//tensorflow_addons:windows": [
             "/DEIGEN_STRONG_INLINE=inline",

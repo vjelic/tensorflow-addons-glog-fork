@@ -14,7 +14,7 @@ limitations under the License.
 #ifndef TENSORFLOW_ADDONS_IMAGE_KERNELS_ADJUST_HSV_IN_YIQ_OP_H_
 #define TENSORFLOW_ADDONS_IMAGE_KERNELS_ADJUST_HSV_IN_YIQ_OP_H_
 
-#if GOOGLE_CUDA
+#if GOOGLE_CUDA || TENSORFLOW_USE_ROCM
 #define EIGEN_USE_GPU
 #endif  // GOOGLE_CUDA
 
@@ -67,7 +67,7 @@ EIGEN_DEVICE_FUNC EIGEN_ALWAYS_INLINE void compute_transformation_matrix(
 }
 }  // namespace internal
 
-#if GOOGLE_CUDA
+#if GOOGLE_CUDA || TENSORFLOW_USE_ROCM
 typedef Eigen::GpuDevice GPUDevice;
 
 namespace functor {

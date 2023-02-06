@@ -13,7 +13,7 @@
 // limitations under the License.
 // =============================================================================
 
-#if GOOGLE_CUDA
+#if GOOGLE_CUDA || TENSORFLOW_USE_ROCM
 
 #define EIGEN_USE_GPU
 

@@ -190,7 +190,7 @@ TF_CALL_float(REGISTER);
 TF_CALL_double(REGISTER);
 #undef REGISTER
 
-#if GOOGLE_CUDA
+#if GOOGLE_CUDA || TENSORFLOW_USE_ROCM
 #define REGISTER(TYPE)                                                       \
   REGISTER_KERNEL_BUILDER(                                                   \
       Name("Addons>Resampler").Device(DEVICE_GPU).TypeConstraint<TYPE>("T"), \
@@ -402,7 +402,7 @@ TF_CALL_float(REGISTER);
 TF_CALL_double(REGISTER);
 #undef REGISTER
 
-#if GOOGLE_CUDA
+#if GOOGLE_CUDA || TENSORFLOW_USE_ROCM
 #define REGISTER(TYPE)                                    \
   REGISTER_KERNEL_BUILDER(Name("Addons>ResamplerGrad")    \
                               .Device(DEVICE_GPU)         \

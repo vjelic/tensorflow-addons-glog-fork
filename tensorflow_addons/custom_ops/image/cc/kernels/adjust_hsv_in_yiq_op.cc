@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#if GOOGLE_CUDA
+#if GOOGLE_CUDA || TENSORFLOW_USE_ROCM
 #define EIGEN_USE_GPU
 #endif  // GOOGLE_CUDA
 
@@ -144,7 +144,7 @@ REGISTER_KERNEL_BUILDER(
     Name("Addons>AdjustHsvInYiq").Device(DEVICE_CPU).TypeConstraint<float>("T"),
     AdjustHsvInYiqOp<CPUDevice>);
 
-#if GOOGLE_CUDA
+#if GOOGLE_CUDA || TENSORFLOW_USE_ROCM
 template <>
 class AdjustHsvInYiqOp<GPUDevice> : public AdjustHsvInYiqOpBase {
  public:
