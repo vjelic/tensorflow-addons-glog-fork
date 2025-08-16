@@ -10,7 +10,20 @@
           "version": "1.0.0",
           "semanticVersion": "1.0.0",
           "informationUri": "https://www.glog.ai",
-          "rules": [],
+          "rules": [
+            {
+              "id": "glog-720f9ac3-bfca-49cb-8a30-2afcc87db14e",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\n\"Exec Usage Detected\" is a vulnerability that arises when a Python program uses the `exec` function or the `eval` function. These functions take a string and execute it as Python code. This can be dangerous if the string is derived from user input, as it allows an attacker to execute arbitrary Python code, potentially leading to remote code execution (RCE) vulnerabilities.\n\nIn the context of file operations, `fp.read` can be a source of this vulnerability if the contents of the file are passed to `exec` or `eval`.\n\n## Mitigation Advice\n\nAvoid using `exec` or `eval` with user-supplied input or file content. If dynamic Python code execution is necessary, consider using safer alternatives like `ast.literal_eval` or built-in functions.\n\n## Source Code Fix Recommendation\n\nIf you have code like this:\n\n```python\nwith open('file.py', 'r') as fp:\n    exec(fp.read())\n```\n\nYou can mitigate the vulnerability by not executing the file content. If you need to import Python code from a file, use the `importlib` module instead:\n\n```python\nimport importlib.util\n\nspec = importlib.util.spec_from_file_location(\"module.name\", \"/path/to/file.py\")\nfoo = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(foo)\n```\n\n## Library Dependencies\n\nThe code example does not require any external library dependencies.\n\n## References\n\n- [CWE-94: Improper Control of Generation of Code ('Code Injection')](https://cwe.mitre.org/data/definitions/94.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B102"
+                ]
+              }
+            }
+          ],
           "language": "en-US",
           "contents": [
             "localizedData",
@@ -20,7 +33,45 @@
         }
       },
       "language": "en-US",
-      "results": [],
+      "results": [
+        {
+          "ruleId": "glog-720f9ac3-bfca-49cb-8a30-2afcc87db14e",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Exec Usage Detected"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "setup.py"
+                },
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 9,
+                  "endLine": 50,
+                  "endColumn": 33,
+                  "snippet": {
+                    "text": "        exec(fp.read(), version)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 49,
+                  "endLine": 51,
+                  "snippet": {
+                    "text": "    with open(os.path.join(base_dir, \"tensorflow_addons\", \"version.py\")) as fp:\n        exec(fp.read(), version)\n\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        }
+      ],
       "newlineSequences": [
         "\r\n",
         "\n"
