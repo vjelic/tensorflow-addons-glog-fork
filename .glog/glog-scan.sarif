@@ -12,30 +12,6 @@
           "informationUri": "https://www.glog.ai",
           "rules": [
             {
-              "id": "459e07ba-0855-35b2-9659-67da098b4e02",
-              "name": "resources.rules.dlint-catastrophic-redos",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
-              },
-              "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dlint-catastrophic-redos"
-                ]
-              }
-            },
-            {
               "id": "4e3d3c52-6153-367f-97e4-4bddee222b2e",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -60,26 +36,26 @@
               }
             },
             {
-              "id": "3de9342a-5d7c-39c6-bd1c-5779ff191ee9",
-              "name": "resources.rules.dangerous-subprocess-use",
+              "id": "459e07ba-0855-35b2-9659-67da098b4e02",
+              "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
+                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
               },
               "fullDescription": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
               },
               "defaultConfiguration": {
                 "enabled": true,
-                "level": "warning"
+                "level": "error"
               },
               "help": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
               },
               "properties": {
                 "precision": "very-high",
                 "tags": [
-                  "resources.rules.dangerous-subprocess-use"
+                  "resources.rules.dlint-catastrophic-redos"
                 ]
               }
             },
@@ -104,6 +80,30 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.missing-image-version"
+                ]
+              }
+            },
+            {
+              "id": "3de9342a-5d7c-39c6-bd1c-5779ff191ee9",
+              "name": "resources.rules.dangerous-subprocess-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
+              },
+              "fullDescription": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dangerous-subprocess-use"
                 ]
               }
             },
@@ -157,30 +157,6 @@
               }
             },
             {
-              "id": "cf4bbad2-d947-3313-8fa8-1eb1173dd886",
-              "name": "resources.rules.raptor-signed-unsigned-conversion",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.raptor-signed-unsigned-conversion"
-              },
-              "fullDescription": {
-                "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://cwe.mitre.org/data/definitions/195](https://cwe.mitre.org/data/definitions/195)\n - [https://cwe.mitre.org/data/definitions/196](https://cwe.mitre.org/data/definitions/196)\n - [https://cwe.mitre.org/data/definitions/194](https://cwe.mitre.org/data/definitions/194)\n - [https://cwe.mitre.org/data/definitions/191](https://cwe.mitre.org/data/definitions/191)\n - [https://cwe.mitre.org/data/definitions/681](https://cwe.mitre.org/data/definitions/681)\n - [https://cwe.mitre.org/data/definitions/789](https://cwe.mitre.org/data/definitions/789)\n - [https://g.co/kgs/PCHQjJ](https://g.co/kgs/PCHQjJ)\n - [https://github.com/struct/mms](https://github.com/struct/mms)\n - [https://www.sei.cmu.edu/downloads/sei-cert-c-coding-standard-2016-v01.pdf](https://www.sei.cmu.edu/downloads/sei-cert-c-coding-standard-2016-v01.pdf)\n - [http://www.phrack.org/issues/60/10.html#article](http://www.phrack.org/issues/60/10.html#article)\n - [https://docs.microsoft.com/en-us/cpp/sanitizers/asan-error-examples](https://docs.microsoft.com/en-us/cpp/sanitizers/asan-error-examples)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.raptor-signed-unsigned-conversion"
-                ]
-              }
-            },
-            {
               "id": "10c2161f-f4f8-3c6e-a40d-5a6b05347bce",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -225,6 +201,30 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
+              "id": "cf4bbad2-d947-3313-8fa8-1eb1173dd886",
+              "name": "resources.rules.raptor-signed-unsigned-conversion",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.raptor-signed-unsigned-conversion"
+              },
+              "fullDescription": {
+                "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://cwe.mitre.org/data/definitions/195](https://cwe.mitre.org/data/definitions/195)\n - [https://cwe.mitre.org/data/definitions/196](https://cwe.mitre.org/data/definitions/196)\n - [https://cwe.mitre.org/data/definitions/194](https://cwe.mitre.org/data/definitions/194)\n - [https://cwe.mitre.org/data/definitions/191](https://cwe.mitre.org/data/definitions/191)\n - [https://cwe.mitre.org/data/definitions/681](https://cwe.mitre.org/data/definitions/681)\n - [https://cwe.mitre.org/data/definitions/789](https://cwe.mitre.org/data/definitions/789)\n - [https://g.co/kgs/PCHQjJ](https://g.co/kgs/PCHQjJ)\n - [https://github.com/struct/mms](https://github.com/struct/mms)\n - [https://www.sei.cmu.edu/downloads/sei-cert-c-coding-standard-2016-v01.pdf](https://www.sei.cmu.edu/downloads/sei-cert-c-coding-standard-2016-v01.pdf)\n - [http://www.phrack.org/issues/60/10.html#article](http://www.phrack.org/issues/60/10.html#article)\n - [https://docs.microsoft.com/en-us/cpp/sanitizers/asan-error-examples](https://docs.microsoft.com/en-us/cpp/sanitizers/asan-error-examples)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.raptor-signed-unsigned-conversion"
                 ]
               }
             },
@@ -277,7 +277,7 @@
               }
             },
             {
-              "id": "4e478770-f1a2-377c-a479-7da6434dddd6",
+              "id": "b83ba1e0-0d5b-3462-998b-0abf726d8fe4",
               "name": "resources.rules.return-in-init",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.return-in-init"
@@ -301,7 +301,7 @@
               }
             },
             {
-              "id": "b83ba1e0-0d5b-3462-998b-0abf726d8fe4",
+              "id": "4e478770-f1a2-377c-a479-7da6434dddd6",
               "name": "resources.rules.return-in-init",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.return-in-init"
@@ -421,6 +421,30 @@
               }
             },
             {
+              "id": "32faaf71-1559-3a2c-8d88-6027eb6219e4",
+              "name": "resources.rules.return-in-init",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.return-in-init"
+              },
+              "fullDescription": {
+                "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "`return` should never appear inside a class __init__ function. This will cause a runtime error.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.return-in-init"
+                ]
+              }
+            },
+            {
               "id": "3d79dcc4-fd2c-3876-b3a7-28058d9cbd81",
               "name": "resources.rules.return-in-init",
               "shortDescription": {
@@ -446,30 +470,6 @@
             },
             {
               "id": "10b006db-6a72-3790-8a05-53f2b2b6acd6",
-              "name": "resources.rules.return-in-init",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.return-in-init"
-              },
-              "fullDescription": {
-                "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "`return` should never appear inside a class __init__ function. This will cause a runtime error.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.return-in-init"
-                ]
-              }
-            },
-            {
-              "id": "32faaf71-1559-3a2c-8d88-6027eb6219e4",
               "name": "resources.rules.return-in-init",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.return-in-init"
@@ -566,6 +566,30 @@
             },
             {
               "id": "340359cc-c5c6-3c2f-a80c-7e4cc39590c6",
+              "name": "resources.rules.missing-ratelimit",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.missing-ratelimit"
+              },
+              "fullDescription": {
+                "text": "Function '$FUNC' is missing a rate-limiting decorator.\nHigh volume traffic to this function could starve application\nresources. Consider adding rate limiting from a library such\nas 'django-ratelimit'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Function '$FUNC' is missing a rate-limiting decorator.\nHigh volume traffic to this function could starve application\nresources. Consider adding rate limiting from a library such\nas 'django-ratelimit'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Function '$FUNC' is missing a rate-limiting decorator.\nHigh volume traffic to this function could starve application\nresources. Consider adding rate limiting from a library such\nas 'django-ratelimit'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/jsocol/django-ratelimit/blob/main/docs/index.rst#quickstart](https://github.com/jsocol/django-ratelimit/blob/main/docs/index.rst#quickstart)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.missing-ratelimit"
+                ]
+              }
+            },
+            {
+              "id": "79f9aa6d-6f5a-327c-99f2-f6fe56063a85",
               "name": "resources.rules.missing-ratelimit",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-ratelimit"
@@ -781,7 +805,7 @@
               }
             },
             {
-              "id": "568a43cb-b19e-364a-96aa-7ae471f02f31",
+              "id": "1ebfc57a-45d8-313f-9606-3894babd11fa",
               "name": "resources.rules.missing-image-version",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-image-version"
@@ -805,7 +829,7 @@
               }
             },
             {
-              "id": "1ebfc57a-45d8-313f-9606-3894babd11fa",
+              "id": "568a43cb-b19e-364a-96aa-7ae471f02f31",
               "name": "resources.rules.missing-image-version",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-image-version"
@@ -877,30 +901,6 @@
               }
             },
             {
-              "id": "55c33b29-b49f-3290-808e-eab1c45f366e",
-              "name": "resources.rules.missing-pip-no-cache-dir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
-              },
-              "fullDescription": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "note"
-              },
-              "help": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.missing-pip-no-cache-dir"
-                ]
-              }
-            },
-            {
               "id": "4ca572fb-a72e-3e33-86ca-af1143bc3831",
               "name": "resources.rules.missing-image-version",
               "shortDescription": {
@@ -925,7 +925,7 @@
               }
             },
             {
-              "id": "d51b20a4-c309-3455-a93b-f9a0f305e154",
+              "id": "55c33b29-b49f-3290-808e-eab1c45f366e",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -969,6 +969,54 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.missing-pip-no-cache-dir"
+                ]
+              }
+            },
+            {
+              "id": "d51b20a4-c309-3455-a93b-f9a0f305e154",
+              "name": "resources.rules.missing-pip-no-cache-dir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
+              },
+              "fullDescription": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.missing-pip-no-cache-dir"
+                ]
+              }
+            },
+            {
+              "id": "03e8b944-c293-34b6-9a1b-c4f62b994043",
+              "name": "resources.rules.use-absolute-workdir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.use-absolute-workdir"
+              },
+              "fullDescription": {
+                "text": "Detected a relative WORKDIR. Use absolute paths. This prevents issues based on assumptions about the WORKDIR of previous containers."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected a relative WORKDIR. Use absolute paths. This prevents issues based on assumptions about the WORKDIR of previous containers.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected a relative WORKDIR. Use absolute paths. This prevents issues based on assumptions about the WORKDIR of previous containers.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3000](https://github.com/hadolint/hadolint/wiki/DL3000)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.use-absolute-workdir"
                 ]
               }
             },
@@ -1021,30 +1069,6 @@
               }
             },
             {
-              "id": "03e8b944-c293-34b6-9a1b-c4f62b994043",
-              "name": "resources.rules.use-absolute-workdir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.use-absolute-workdir"
-              },
-              "fullDescription": {
-                "text": "Detected a relative WORKDIR. Use absolute paths. This prevents issues based on assumptions about the WORKDIR of previous containers."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Detected a relative WORKDIR. Use absolute paths. This prevents issues based on assumptions about the WORKDIR of previous containers.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected a relative WORKDIR. Use absolute paths. This prevents issues based on assumptions about the WORKDIR of previous containers.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3000](https://github.com/hadolint/hadolint/wiki/DL3000)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.use-absolute-workdir"
-                ]
-              }
-            },
-            {
               "id": "cb20bbae-3cd1-3abb-b5f9-9eea6dd49ae1",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
@@ -1089,6 +1113,30 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.missing-image-version"
+                ]
+              }
+            },
+            {
+              "id": "af9ada0d-9a34-3287-8319-e76222c8043f",
+              "name": "resources.rules.missing-pip-no-cache-dir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
+              },
+              "fullDescription": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.missing-pip-no-cache-dir"
                 ]
               }
             },
@@ -1166,7 +1214,7 @@
               }
             },
             {
-              "id": "890fd611-8ff2-376c-b858-2f8433ecb308",
+              "id": "28aace7f-2ae9-30ba-8e3c-f36766bea4c0",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1190,7 +1238,7 @@
               }
             },
             {
-              "id": "28aace7f-2ae9-30ba-8e3c-f36766bea4c0",
+              "id": "890fd611-8ff2-376c-b858-2f8433ecb308",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1238,7 +1286,7 @@
               }
             },
             {
-              "id": "82185315-a76d-3fa6-9e5c-2ae772d20b5b",
+              "id": "18f3e054-bd87-3dcb-ba05-d0e439895df9",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1286,7 +1334,7 @@
               }
             },
             {
-              "id": "18f3e054-bd87-3dcb-ba05-d0e439895df9",
+              "id": "82185315-a76d-3fa6-9e5c-2ae772d20b5b",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1430,7 +1478,7 @@
               }
             },
             {
-              "id": "8456622c-e6c4-35b3-af65-dd3310ce30a0",
+              "id": "a0395cf7-7394-3651-8ea3-5be8c4764212",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1454,7 +1502,7 @@
               }
             },
             {
-              "id": "a0395cf7-7394-3651-8ea3-5be8c4764212",
+              "id": "8456622c-e6c4-35b3-af65-dd3310ce30a0",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1585,37 +1633,6 @@
       "language": "en-US",
       "results": [
         {
-          "ruleId": "459e07ba-0855-35b2-9659-67da098b4e02",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Regex `r\"#define %s +(\\d+)\" % name` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "build_deps/toolchains/gpu/find_cuda_config.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 124,
-                  "startColumn": 17,
-                  "endLine": 124,
-                  "endColumn": 60,
-                  "snippet": {
-                    "text": "        match = re.match(r\"#define %s +(\\d+)\" % name, line)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "cfe1d4cd1d15ee1c48164028dc9d12fea4e1bab8b9c0a01a6aad1b20d2028d0e0a5a27139baf52058c5be7930f2d76337bfcfe506bb35e71f0b26228ce748607_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "4e3d3c52-6153-367f-97e4-4bddee222b2e",
           "kind": "fail",
           "level": "warning",
@@ -1647,11 +1664,11 @@
           "properties": {}
         },
         {
-          "ruleId": "3de9342a-5d7c-39c6-bd1c-5779ff191ee9",
+          "ruleId": "459e07ba-0855-35b2-9659-67da098b4e02",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Detected subprocess function 'check_output' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+            "text": "Regex `r\"#define %s +(\\d+)\" % name` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
           },
           "locations": [
             {
@@ -1661,19 +1678,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 140,
-                  "startColumn": 14,
-                  "endLine": 140,
+                  "startLine": 124,
+                  "startColumn": 17,
+                  "endLine": 124,
                   "endColumn": 60,
                   "snippet": {
-                    "text": "    output = subprocess.check_output([ldconfig_path, \"-p\"])"
+                    "text": "        match = re.match(r\"#define %s +(\\d+)\" % name, line)"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "fb9299f74806010d8fd887a99cd98f42555999e71feb5301c0d6c5d06875cead462ea849b0b2b22928e473baf6dc686ff38201579912097e0ccb3566a1173f28_0"
+            "matchBasedId/v1": "cfe1d4cd1d15ee1c48164028dc9d12fea4e1bab8b9c0a01a6aad1b20d2028d0e0a5a27139baf52058c5be7930f2d76337bfcfe506bb35e71f0b26228ce748607_0"
           },
           "properties": {}
         },
@@ -1705,6 +1722,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "c68c8d2f5bfc0d1f15d29e49ecb01bf22a1bb1d666ef20a4c0453d1fee6f9b0a1670a0c37cb270649815a87260da628d3024912653919404c3ce4f85cda7b1cb_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "3de9342a-5d7c-39c6-bd1c-5779ff191ee9",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected subprocess function 'check_output' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "build_deps/toolchains/gpu/find_cuda_config.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 14,
+                  "endLine": 140,
+                  "endColumn": 60,
+                  "snippet": {
+                    "text": "    output = subprocess.check_output([ldconfig_path, \"-p\"])"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "fb9299f74806010d8fd887a99cd98f42555999e71feb5301c0d6c5d06875cead462ea849b0b2b22928e473baf6dc686ff38201579912097e0ccb3566a1173f28_0"
           },
           "properties": {}
         },
@@ -1771,37 +1819,6 @@
           "properties": {}
         },
         {
-          "ruleId": "cf4bbad2-d947-3313-8fa8-1eb1173dd886",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tensorflow_addons/custom_ops/layers/cc/kernels/embedding_bag_backward_kernels.cu.cc",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 69,
-                  "startColumn": 12,
-                  "endLine": 69,
-                  "endColumn": 35,
-                  "snippet": {
-                    "text": "  unsigned activeMask = 0xffffffff;"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "d1cfe5a59b533b6b49473823070cf235cf589a13a18ec7686e33c469a68fd0b36258c25d8979e4028cdc0eb9fedb8037f291d5cb0da0a67ba56541f2da3502f7_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "10c2161f-f4f8-3c6e-a40d-5a6b05347bce",
           "kind": "fail",
           "level": "warning",
@@ -1860,6 +1877,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "490ac69c505c6c19a7d2403b6a8ad95334c1c5a760d64af829e3436a95391b47d516087f264c54ac8c7a78eab7a2eaeaa5b1a6ef9e7f49e4116ac90b4445816f_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "cf4bbad2-d947-3313-8fa8-1eb1173dd886",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tensorflow_addons/custom_ops/layers/cc/kernels/embedding_bag_backward_kernels.cu.cc",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 12,
+                  "endLine": 69,
+                  "endColumn": 35,
+                  "snippet": {
+                    "text": "  unsigned activeMask = 0xffffffff;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "d1cfe5a59b533b6b49473823070cf235cf589a13a18ec7686e33c469a68fd0b36258c25d8979e4028cdc0eb9fedb8037f291d5cb0da0a67ba56541f2da3502f7_0"
           },
           "properties": {}
         },
@@ -1926,37 +1974,6 @@
           "properties": {}
         },
         {
-          "ruleId": "4e478770-f1a2-377c-a479-7da6434dddd6",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tensorflow_addons/optimizers/cyclical_learning_rate.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 169,
-                  "startColumn": 32,
-                  "endLine": 169,
-                  "endColumn": 35,
-                  "snippet": {
-                    "text": "            scale_fn=lambda x: 1.0,"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "efb7db78c8e955eb5ec279eb25562dfd1666cfb5ffd66f5aaf499e699e489a6d74bb0687262f523be51ce554acec07b75df44a4e817fc09a14726cecb998a63c_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "b83ba1e0-0d5b-3462-998b-0abf726d8fe4",
           "kind": "fail",
           "level": "warning",
@@ -1984,6 +2001,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "4fa0e3beba25f69686e0fc5579933792e9d54c92683c4a3fe75735a896803d10a351c09b52a31e02636d30ceb8528940e1112f9282f5b47f9c1ff64f4d2dfb02_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "4e478770-f1a2-377c-a479-7da6434dddd6",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tensorflow_addons/optimizers/cyclical_learning_rate.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 169,
+                  "startColumn": 32,
+                  "endLine": 169,
+                  "endColumn": 35,
+                  "snippet": {
+                    "text": "            scale_fn=lambda x: 1.0,"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "efb7db78c8e955eb5ec279eb25562dfd1666cfb5ffd66f5aaf499e699e489a6d74bb0687262f523be51ce554acec07b75df44a4e817fc09a14726cecb998a63c_0"
           },
           "properties": {}
         },
@@ -2112,6 +2160,37 @@
           "properties": {}
         },
         {
+          "ruleId": "32faaf71-1559-3a2c-8d88-6027eb6219e4",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tensorflow_addons/seq2seq/attention_wrapper.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 546,
+                  "startColumn": 13,
+                  "endLine": 546,
+                  "endColumn": 41,
+                  "snippet": {
+                    "text": "            return probability_fn(score)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "7650e4e6e7f919a6262353ac8a27434eb5cc8a9b829e3dfe6e20a9911f55d78b8e9119f6bd34a2cbd805b3bc137e14bfd03070e51604200ebe13c2a4f3f26b1c_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "3d79dcc4-fd2c-3876-b3a7-28058d9cbd81",
           "kind": "fail",
           "level": "warning",
@@ -2170,37 +2249,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "b1b4105d313a03a28b9a5e00b1f630ad67e8ade292ea9426fc8d959e065de6b6cfeb288626fc7a7b03559e3f63ae60ba73426c0761aaecf6cb24b0282d20a08e_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "32faaf71-1559-3a2c-8d88-6027eb6219e4",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tensorflow_addons/seq2seq/attention_wrapper.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 546,
-                  "startColumn": 13,
-                  "endLine": 546,
-                  "endColumn": 41,
-                  "snippet": {
-                    "text": "            return probability_fn(score)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "7650e4e6e7f919a6262353ac8a27434eb5cc8a9b829e3dfe6e20a9911f55d78b8e9119f6bd34a2cbd805b3bc137e14bfd03070e51604200ebe13c2a4f3f26b1c_0"
           },
           "properties": {}
         },
@@ -2325,6 +2373,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "0f284df6ed7f1f7e7f8180e180ce8445105079a27de03c55a8bb74b723fc0bcd3593fe6c9199bc8438aa7ce46a032e70e8b3beac73f5cf82091c190763d44664_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "79f9aa6d-6f5a-327c-99f2-f6fe56063a85",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Function 'run_with_mixed_precision_policy' is missing a rate-limiting decorator.\nHigh volume traffic to this function could starve application\nresources. Consider adding rate limiting from a library such\nas 'django-ratelimit'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tensorflow_addons/utils/test_utils.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 117,
+                  "startColumn": 1,
+                  "endLine": 121,
+                  "endColumn": 58,
+                  "snippet": {
+                    "text": "@pytest.fixture(scope=\"function\", params=[\"float32\", \"mixed_float16\"])\ndef run_with_mixed_precision_policy(request):\n    tf.keras.mixed_precision.set_global_policy(request.param)\n    yield\n    tf.keras.mixed_precision.set_global_policy(\"float32\")"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "2e52f85bc1cbfeb22fa7e4cb06a5f78e5a8edc7add97780f5b6132c58886abf361ebdf7a275e1e61cdeae40b02ad77a268e2c494ac52c83acad04a1d16454612_0"
           },
           "properties": {}
         },
@@ -2577,37 +2656,6 @@
           "properties": {}
         },
         {
-          "ruleId": "568a43cb-b19e-364a-96aa-7ae471f02f31",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Images should be tagged with an explicit version to produce deterministic container images."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tools/docker/build_wheel.Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 56,
-                  "startColumn": 1,
-                  "endLine": 56,
-                  "endColumn": 12,
-                  "snippet": {
-                    "text": "FROM python:$PY_VERSION as test_wheel_in_fresh_environment"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "1e21238e2f484e7a21fc53a3b9287abd57d3da7b83cf63a64582baf0a919878310a73631e41665db26882acc67a01db69856d1bf48f002f24635ae281fe67f93_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "1ebfc57a-45d8-313f-9606-3894babd11fa",
           "kind": "fail",
           "level": "warning",
@@ -2635,6 +2683,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "c5d3612805fb1fbb5d8973ccf54c4757b601ead8f1cbd5db7ae422e4dc54fc43a7915a299edf2bdd0abc8055f13d58a4295d9d4a53bdc63799fdb8aea6ffe7e9_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "568a43cb-b19e-364a-96aa-7ae471f02f31",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Images should be tagged with an explicit version to produce deterministic container images."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tools/docker/build_wheel.Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 1,
+                  "endLine": 56,
+                  "endColumn": 12,
+                  "snippet": {
+                    "text": "FROM python:$PY_VERSION as test_wheel_in_fresh_environment"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "1e21238e2f484e7a21fc53a3b9287abd57d3da7b83cf63a64582baf0a919878310a73631e41665db26882acc67a01db69856d1bf48f002f24635ae281fe67f93_0"
           },
           "properties": {}
         },
@@ -2701,6 +2780,37 @@
           "properties": {}
         },
         {
+          "ruleId": "4ca572fb-a72e-3e33-86ca-af1143bc3831",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Images should be tagged with an explicit version to produce deterministic container images."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tools/docker/build_wheel.Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 1,
+                  "endLine": 69,
+                  "endColumn": 13,
+                  "snippet": {
+                    "text": "FROM scratch as output"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "4bad7270c3cbbe350b8776b38ea34d042394557e4e3e11b35c3a2b496cebfb850cde6dc30566db430e7f3e1548a20c015df71213d8b19becf0a19c410823fb0d_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "55c33b29-b49f-3290-808e-eab1c45f366e",
           "kind": "fail",
           "level": "warning",
@@ -2732,33 +2842,33 @@
           "properties": {}
         },
         {
-          "ruleId": "4ca572fb-a72e-3e33-86ca-af1143bc3831",
+          "ruleId": "2d2b1bca-22cb-3b45-a9ef-338ce74f180e",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Images should be tagged with an explicit version to produce deterministic container images."
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "tools/docker/build_wheel.Dockerfile",
+                  "uri": "tools/docker/cpu_tests.Dockerfile",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 69,
+                  "startLine": 15,
                   "startColumn": 1,
-                  "endLine": 69,
-                  "endColumn": 13,
+                  "endLine": 15,
+                  "endColumn": 19,
                   "snippet": {
-                    "text": "FROM scratch as output"
+                    "text": "RUN pip install -r pytest.txt pytest-cov"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "4bad7270c3cbbe350b8776b38ea34d042394557e4e3e11b35c3a2b496cebfb850cde6dc30566db430e7f3e1548a20c015df71213d8b19becf0a19c410823fb0d_0"
+            "matchBasedId/v1": "1cf02482029fea1456ec672d862304cf8b911986f0f9797c14609cc99e559ceb4388a1cd8281571e58bf664ceac1889ce34dc86622896ddec9b69b8323676153_1"
           },
           "properties": {}
         },
@@ -2794,11 +2904,11 @@
           "properties": {}
         },
         {
-          "ruleId": "2d2b1bca-22cb-3b45-a9ef-338ce74f180e",
+          "ruleId": "03e8b944-c293-34b6-9a1b-c4f62b994043",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+            "text": "Detected a relative WORKDIR. Use absolute paths. This prevents issues based on assumptions about the WORKDIR of previous containers."
           },
           "locations": [
             {
@@ -2808,19 +2918,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 15,
+                  "startLine": 18,
                   "startColumn": 1,
-                  "endLine": 15,
-                  "endColumn": 19,
+                  "endLine": 18,
+                  "endColumn": 15,
                   "snippet": {
-                    "text": "RUN pip install -r pytest.txt pytest-cov"
+                    "text": "WORKDIR addons"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "1cf02482029fea1456ec672d862304cf8b911986f0f9797c14609cc99e559ceb4388a1cd8281571e58bf664ceac1889ce34dc86622896ddec9b69b8323676153_1"
+            "matchBasedId/v1": "97e55c17c0f041fda72f06d964695ec3da7d6ee0b498c4a3572555f0663b30fc476f128c8cab11f1bfed3ba682457ee6b598bc39b9e301a15d98f4aa1d6f2999_0"
           },
           "properties": {}
         },
@@ -2883,37 +2993,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "75c0dffd435cb7e7fbd8977a23806cc9731c269ac0c71f68f7f3eb081b884e704418b02bc4182b4962f7004112422bdd221272ef4390b403447d859afb923d8f_1"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "03e8b944-c293-34b6-9a1b-c4f62b994043",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected a relative WORKDIR. Use absolute paths. This prevents issues based on assumptions about the WORKDIR of previous containers."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tools/docker/cpu_tests.Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 1,
-                  "endLine": 18,
-                  "endColumn": 15,
-                  "snippet": {
-                    "text": "WORKDIR addons"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "97e55c17c0f041fda72f06d964695ec3da7d6ee0b498c4a3572555f0663b30fc476f128c8cab11f1bfed3ba682457ee6b598bc39b9e301a15d98f4aa1d6f2999_0"
           },
           "properties": {}
         },
@@ -3104,37 +3183,6 @@
           "properties": {}
         },
         {
-          "ruleId": "890fd611-8ff2-376c-b858-2f8433ecb308",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tools/docker/sanity_check.Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 15,
-                  "startColumn": 1,
-                  "endLine": 15,
-                  "endColumn": 19,
-                  "snippet": {
-                    "text": "RUN pip install -r black.txt"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "156799dbeeb3ad06a49a77776848417a2f6ca6536bab66e287db7b8ba8404dde9939a9ac681bf3c5be2ec164913c0a69e4db982e2a2f31baeb4c8ca909d99fb9_1"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "28aace7f-2ae9-30ba-8e3c-f36766bea4c0",
           "kind": "fail",
           "level": "warning",
@@ -3162,6 +3210,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "156799dbeeb3ad06a49a77776848417a2f6ca6536bab66e287db7b8ba8404dde9939a9ac681bf3c5be2ec164913c0a69e4db982e2a2f31baeb4c8ca909d99fb9_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "890fd611-8ff2-376c-b858-2f8433ecb308",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tools/docker/sanity_check.Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 1,
+                  "endLine": 15,
+                  "endColumn": 19,
+                  "snippet": {
+                    "text": "RUN pip install -r black.txt"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "156799dbeeb3ad06a49a77776848417a2f6ca6536bab66e287db7b8ba8404dde9939a9ac681bf3c5be2ec164913c0a69e4db982e2a2f31baeb4c8ca909d99fb9_1"
           },
           "properties": {}
         },
@@ -3197,7 +3276,7 @@
           "properties": {}
         },
         {
-          "ruleId": "82185315-a76d-3fa6-9e5c-2ae772d20b5b",
+          "ruleId": "18f3e054-bd87-3dcb-ba05-d0e439895df9",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -3211,9 +3290,9 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 85,
+                  "startLine": 40,
                   "startColumn": 1,
-                  "endLine": 85,
+                  "endLine": 40,
                   "endColumn": 26,
                   "snippet": {
                     "text": "RUN pip install --default-timeout=1000 -r tensorflow-cpu.txt"
@@ -3223,7 +3302,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "3d200db22675c51b6003dceba03f854678f0b032fa359bc3f3cb2156e875fd193b40c449c30bd8a8b798f53c827f5949343cb4bce173e2239bccb82aeee07758_2"
+            "matchBasedId/v1": "3d200db22675c51b6003dceba03f854678f0b032fa359bc3f3cb2156e875fd193b40c449c30bd8a8b798f53c827f5949343cb4bce173e2239bccb82aeee07758_1"
           },
           "properties": {}
         },
@@ -3259,7 +3338,7 @@
           "properties": {}
         },
         {
-          "ruleId": "18f3e054-bd87-3dcb-ba05-d0e439895df9",
+          "ruleId": "82185315-a76d-3fa6-9e5c-2ae772d20b5b",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -3273,9 +3352,9 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 40,
+                  "startLine": 85,
                   "startColumn": 1,
-                  "endLine": 40,
+                  "endLine": 85,
                   "endColumn": 26,
                   "snippet": {
                     "text": "RUN pip install --default-timeout=1000 -r tensorflow-cpu.txt"
@@ -3285,7 +3364,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "3d200db22675c51b6003dceba03f854678f0b032fa359bc3f3cb2156e875fd193b40c449c30bd8a8b798f53c827f5949343cb4bce173e2239bccb82aeee07758_1"
+            "matchBasedId/v1": "3d200db22675c51b6003dceba03f854678f0b032fa359bc3f3cb2156e875fd193b40c449c30bd8a8b798f53c827f5949343cb4bce173e2239bccb82aeee07758_2"
           },
           "properties": {}
         },
@@ -3445,37 +3524,6 @@
           "properties": {}
         },
         {
-          "ruleId": "8456622c-e6c4-35b3-af65-dd3310ce30a0",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tools/docker/sanity_check.Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 120,
-                  "startColumn": 1,
-                  "endLine": 120,
-                  "endColumn": 21,
-                  "snippet": {
-                    "text": "RUN pip install --no-deps -e ."
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "f05f914700a1ac617d5e175765e10d2261c5c823eb9bf7b0d21b7d4baef80d7703aaa3ae8c70d1db270ccd424956f6bb02f0e0f05793c9cfc4577475791e600a_1"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "a0395cf7-7394-3651-8ea3-5be8c4764212",
           "kind": "fail",
           "level": "warning",
@@ -3503,6 +3551,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "156799dbeeb3ad06a49a77776848417a2f6ca6536bab66e287db7b8ba8404dde9939a9ac681bf3c5be2ec164913c0a69e4db982e2a2f31baeb4c8ca909d99fb9_5"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "8456622c-e6c4-35b3-af65-dd3310ce30a0",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tools/docker/sanity_check.Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 120,
+                  "startColumn": 1,
+                  "endLine": 120,
+                  "endColumn": 21,
+                  "snippet": {
+                    "text": "RUN pip install --no-deps -e ."
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "f05f914700a1ac617d5e175765e10d2261c5c823eb9bf7b0d21b7d4baef80d7703aaa3ae8c70d1db270ccd424956f6bb02f0e0f05793c9cfc4577475791e600a_1"
           },
           "properties": {}
         },
