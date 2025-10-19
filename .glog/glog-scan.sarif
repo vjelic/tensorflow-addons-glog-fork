@@ -12,6 +12,54 @@
           "informationUri": "https://www.glog.ai",
           "rules": [
             {
+              "id": "3de9342a-5d7c-39c6-bd1c-5779ff191ee9",
+              "name": "resources.rules.dangerous-subprocess-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
+              },
+              "fullDescription": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dangerous-subprocess-use"
+                ]
+              }
+            },
+            {
+              "id": "4e3d3c52-6153-367f-97e4-4bddee222b2e",
+              "name": "resources.rules.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
               "id": "459e07ba-0855-35b2-9659-67da098b4e02",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -60,54 +108,6 @@
               }
             },
             {
-              "id": "4e3d3c52-6153-367f-97e4-4bddee222b2e",
-              "name": "resources.rules.dlint-catastrophic-redos",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
-              },
-              "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dlint-catastrophic-redos"
-                ]
-              }
-            },
-            {
-              "id": "3de9342a-5d7c-39c6-bd1c-5779ff191ee9",
-              "name": "resources.rules.dangerous-subprocess-use",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
-              },
-              "fullDescription": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dangerous-subprocess-use"
-                ]
-              }
-            },
-            {
               "id": "edc2cda4-2c6f-32f3-941f-c2a8ea5ef41f",
               "name": "python.lang.security.audit.exec-detected.exec-detected",
               "shortDescription": {
@@ -129,6 +129,30 @@
                 "precision": "very-high",
                 "tags": [
                   "python.lang.security.audit.exec-detected.exec-detected"
+                ]
+              }
+            },
+            {
+              "id": "218f317c-b371-3c16-b058-023ec810f48d",
+              "name": "resources.rules.dangerous-subprocess-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
+              },
+              "fullDescription": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dangerous-subprocess-use"
                 ]
               }
             },
@@ -201,30 +225,6 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.raptor-signed-unsigned-conversion"
-                ]
-              }
-            },
-            {
-              "id": "218f317c-b371-3c16-b058-023ec810f48d",
-              "name": "resources.rules.dangerous-subprocess-use",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
-              },
-              "fullDescription": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dangerous-subprocess-use"
                 ]
               }
             },
@@ -349,30 +349,6 @@
               }
             },
             {
-              "id": "a8f792fe-5e39-3660-8026-df3a8dde9ecd",
-              "name": "resources.rules.pass-body-fn",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.pass-body-fn"
-              },
-              "fullDescription": {
-                "text": "`pass` is the body of function $X. Consider removing this or raise NotImplementedError() if this is a TODO"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "`pass` is the body of function $X. Consider removing this or raise NotImplementedError() if this is a TODO\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "`pass` is the body of function $X. Consider removing this or raise NotImplementedError() if this is a TODO\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.pass-body-fn"
-                ]
-              }
-            },
-            {
               "id": "b41245c2-6e6c-35e0-b168-ab33ba631f6d",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -393,6 +369,30 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
+              "id": "a8f792fe-5e39-3660-8026-df3a8dde9ecd",
+              "name": "resources.rules.pass-body-fn",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.pass-body-fn"
+              },
+              "fullDescription": {
+                "text": "`pass` is the body of function $X. Consider removing this or raise NotImplementedError() if this is a TODO"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "`pass` is the body of function $X. Consider removing this or raise NotImplementedError() if this is a TODO\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "`pass` is the body of function $X. Consider removing this or raise NotImplementedError() if this is a TODO\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.pass-body-fn"
                 ]
               }
             },
@@ -445,7 +445,7 @@
               }
             },
             {
-              "id": "10b006db-6a72-3790-8a05-53f2b2b6acd6",
+              "id": "3d79dcc4-fd2c-3876-b3a7-28058d9cbd81",
               "name": "resources.rules.return-in-init",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.return-in-init"
@@ -469,7 +469,7 @@
               }
             },
             {
-              "id": "3d79dcc4-fd2c-3876-b3a7-28058d9cbd81",
+              "id": "10b006db-6a72-3790-8a05-53f2b2b6acd6",
               "name": "resources.rules.return-in-init",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.return-in-init"
@@ -733,7 +733,7 @@
               }
             },
             {
-              "id": "ca5f57d8-233b-3e6d-b691-b1aefa9de6ef",
+              "id": "17d5230e-2636-33d9-b8c0-3a358b94e38c",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -781,7 +781,7 @@
               }
             },
             {
-              "id": "17d5230e-2636-33d9-b8c0-3a358b94e38c",
+              "id": "ca5f57d8-233b-3e6d-b691-b1aefa9de6ef",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -853,7 +853,7 @@
               }
             },
             {
-              "id": "6b27fe50-6c9d-35ee-8119-835153103e43",
+              "id": "76dcaf6c-5298-30a8-b644-4d0243b1e3cf",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -877,7 +877,7 @@
               }
             },
             {
-              "id": "76dcaf6c-5298-30a8-b644-4d0243b1e3cf",
+              "id": "6b27fe50-6c9d-35ee-8119-835153103e43",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1045,7 +1045,7 @@
               }
             },
             {
-              "id": "d71e35d8-2698-3e28-b59e-47d3fa356379",
+              "id": "cb20bbae-3cd1-3abb-b5f9-9eea6dd49ae1",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1069,7 +1069,7 @@
               }
             },
             {
-              "id": "cb20bbae-3cd1-3abb-b5f9-9eea6dd49ae1",
+              "id": "d71e35d8-2698-3e28-b59e-47d3fa356379",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1117,6 +1117,30 @@
               }
             },
             {
+              "id": "af9ada0d-9a34-3287-8319-e76222c8043f",
+              "name": "resources.rules.missing-pip-no-cache-dir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
+              },
+              "fullDescription": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.missing-pip-no-cache-dir"
+                ]
+              }
+            },
+            {
               "id": "12b5d861-10e0-3b48-bd7b-2455f57aef3d",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
@@ -1142,30 +1166,6 @@
             },
             {
               "id": "44bab8af-ae1a-3c44-b80d-976635a17b04",
-              "name": "resources.rules.missing-pip-no-cache-dir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
-              },
-              "fullDescription": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "note"
-              },
-              "help": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.missing-pip-no-cache-dir"
-                ]
-              }
-            },
-            {
-              "id": "af9ada0d-9a34-3287-8319-e76222c8043f",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1406,7 +1406,7 @@
               }
             },
             {
-              "id": "1d51f948-e2f5-3ed9-ae02-6a4bfaff3f6f",
+              "id": "3a1e9e79-d27f-344d-a6e7-025d5e98ddaa",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1430,7 +1430,7 @@
               }
             },
             {
-              "id": "3a1e9e79-d27f-344d-a6e7-025d5e98ddaa",
+              "id": "1d51f948-e2f5-3ed9-ae02-6a4bfaff3f6f",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -1633,6 +1633,68 @@
       "language": "en-US",
       "results": [
         {
+          "ruleId": "3de9342a-5d7c-39c6-bd1c-5779ff191ee9",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected subprocess function 'check_output' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "build_deps/toolchains/gpu/find_cuda_config.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 14,
+                  "endLine": 140,
+                  "endColumn": 60,
+                  "snippet": {
+                    "text": "    output = subprocess.check_output([ldconfig_path, \"-p\"])"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "fb9299f74806010d8fd887a99cd98f42555999e71feb5301c0d6c5d06875cead462ea849b0b2b22928e473baf6dc686ff38201579912097e0ccb3566a1173f28_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "4e3d3c52-6153-367f-97e4-4bddee222b2e",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `\".* => (.*)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "build_deps/toolchains/gpu/find_cuda_config.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 141,
+                  "startColumn": 15,
+                  "endLine": 141,
+                  "endColumn": 39,
+                  "snippet": {
+                    "text": "    pattern = re.compile(\".* => (.*)\")"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "1f44d3e38bb7072de88a7466b3ccd37cb588db17e1b81ec13cef690d30e0193fb408412a484dbd575cf982799224e029c4e3195627e3b6feaabffa3fb5d44d19_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "459e07ba-0855-35b2-9659-67da098b4e02",
           "kind": "fail",
           "level": "warning",
@@ -1695,68 +1757,6 @@
           "properties": {}
         },
         {
-          "ruleId": "4e3d3c52-6153-367f-97e4-4bddee222b2e",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Regex `\".* => (.*)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "build_deps/toolchains/gpu/find_cuda_config.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 141,
-                  "startColumn": 15,
-                  "endLine": 141,
-                  "endColumn": 39,
-                  "snippet": {
-                    "text": "    pattern = re.compile(\".* => (.*)\")"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "1f44d3e38bb7072de88a7466b3ccd37cb588db17e1b81ec13cef690d30e0193fb408412a484dbd575cf982799224e029c4e3195627e3b6feaabffa3fb5d44d19_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "3de9342a-5d7c-39c6-bd1c-5779ff191ee9",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected subprocess function 'check_output' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "build_deps/toolchains/gpu/find_cuda_config.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 140,
-                  "startColumn": 14,
-                  "endLine": 140,
-                  "endColumn": 60,
-                  "snippet": {
-                    "text": "    output = subprocess.check_output([ldconfig_path, \"-p\"])"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "fb9299f74806010d8fd887a99cd98f42555999e71feb5301c0d6c5d06875cead462ea849b0b2b22928e473baf6dc686ff38201579912097e0ccb3566a1173f28_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "edc2cda4-2c6f-32f3-941f-c2a8ea5ef41f",
           "kind": "fail",
           "level": "warning",
@@ -1784,6 +1784,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "b2ee0b627135e0e83e40c14e5dae3bc1852a41df3bb118c01a70a5dc9c248997ce844464bbcd811e40b3ecb1182013ebc2d82e8704d02a5f22efc47131e1948b_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "218f317c-b371-3c16-b058-023ec810f48d",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected subprocess function 'check_output' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "build_deps/toolchains/gpu/find_cuda_config.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 276,
+                  "startColumn": 21,
+                  "endLine": 276,
+                  "endColumn": 65,
+                  "snippet": {
+                    "text": "        for line in subprocess.check_output([path, \"--version\"]).splitlines():"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "fb9299f74806010d8fd887a99cd98f42555999e71feb5301c0d6c5d06875cead462ea849b0b2b22928e473baf6dc686ff38201579912097e0ccb3566a1173f28_1"
           },
           "properties": {}
         },
@@ -1877,37 +1908,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "d1cfe5a59b533b6b49473823070cf235cf589a13a18ec7686e33c469a68fd0b36258c25d8979e4028cdc0eb9fedb8037f291d5cb0da0a67ba56541f2da3502f7_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "218f317c-b371-3c16-b058-023ec810f48d",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected subprocess function 'check_output' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "build_deps/toolchains/gpu/find_cuda_config.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 276,
-                  "startColumn": 21,
-                  "endLine": 276,
-                  "endColumn": 65,
-                  "snippet": {
-                    "text": "        for line in subprocess.check_output([path, \"--version\"]).splitlines():"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "fb9299f74806010d8fd887a99cd98f42555999e71feb5301c0d6c5d06875cead462ea849b0b2b22928e473baf6dc686ff38201579912097e0ccb3566a1173f28_1"
           },
           "properties": {}
         },
@@ -2067,37 +2067,6 @@
           "properties": {}
         },
         {
-          "ruleId": "a8f792fe-5e39-3660-8026-df3a8dde9ecd",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "`pass` is the body of function register_keras_objects. Consider removing this or raise NotImplementedError() if this is a TODO"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tensorflow_addons/register.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 72,
-                  "startColumn": 1,
-                  "endLine": 77,
-                  "endColumn": 9,
-                  "snippet": {
-                    "text": "def register_keras_objects() -> None:\n    # TODO: once layer_test is replaced by a public API\n    # and we can used unregistered objects with it\n    # we can remove all decorators.\n    # And register Keras objects here.\n    pass"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "4f417d19a7f044e61658b44e89dc80bc424c0a2ca4f5423f8401161ab32113c21b3f3b19cadeb6c3e96c5b3011368a250cbfe84395b7c9525db8a888282a10bf_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "b41245c2-6e6c-35e0-b168-ab33ba631f6d",
           "kind": "fail",
           "level": "warning",
@@ -2125,6 +2094,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "8f65c1e134c226ef81b55b39260992568090060fdcb5dec05b7870cee093670bd4acfa3a05208bbdfe2f71f9dcb3552ffaf2aa68ae421e7f14fbd7fabf26c721_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "a8f792fe-5e39-3660-8026-df3a8dde9ecd",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "`pass` is the body of function register_keras_objects. Consider removing this or raise NotImplementedError() if this is a TODO"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tensorflow_addons/register.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 72,
+                  "startColumn": 1,
+                  "endLine": 77,
+                  "endColumn": 9,
+                  "snippet": {
+                    "text": "def register_keras_objects() -> None:\n    # TODO: once layer_test is replaced by a public API\n    # and we can used unregistered objects with it\n    # we can remove all decorators.\n    # And register Keras objects here.\n    pass"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "4f417d19a7f044e61658b44e89dc80bc424c0a2ca4f5423f8401161ab32113c21b3f3b19cadeb6c3e96c5b3011368a250cbfe84395b7c9525db8a888282a10bf_0"
           },
           "properties": {}
         },
@@ -2191,37 +2191,6 @@
           "properties": {}
         },
         {
-          "ruleId": "10b006db-6a72-3790-8a05-53f2b2b6acd6",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tensorflow_addons/seq2seq/attention_wrapper.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 1708,
-                  "startColumn": 17,
-                  "endLine": 1708,
-                  "endColumn": 58,
-                  "snippet": {
-                    "text": "                return tf.concat([inputs, attention], -1)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "b1b4105d313a03a28b9a5e00b1f630ad67e8ade292ea9426fc8d959e065de6b6cfeb288626fc7a7b03559e3f63ae60ba73426c0761aaecf6cb24b0282d20a08e_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "3d79dcc4-fd2c-3876-b3a7-28058d9cbd81",
           "kind": "fail",
           "level": "warning",
@@ -2249,6 +2218,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "63ac006be612c2bf121a8ee95d6ac4384e650267bdf3635db449c4bb8c62b7af49cdb2d649c175d4c0b09910b17696992b60eed5bfdb1778ac0e4747d0e8b4d5_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "10b006db-6a72-3790-8a05-53f2b2b6acd6",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tensorflow_addons/seq2seq/attention_wrapper.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1708,
+                  "startColumn": 17,
+                  "endLine": 1708,
+                  "endColumn": 58,
+                  "snippet": {
+                    "text": "                return tf.concat([inputs, attention], -1)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "b1b4105d313a03a28b9a5e00b1f630ad67e8ade292ea9426fc8d959e065de6b6cfeb288626fc7a7b03559e3f63ae60ba73426c0761aaecf6cb24b0282d20a08e_0"
           },
           "properties": {}
         },
@@ -2563,7 +2563,7 @@
           "properties": {}
         },
         {
-          "ruleId": "ca5f57d8-233b-3e6d-b691-b1aefa9de6ef",
+          "ruleId": "17d5230e-2636-33d9-b8c0-3a358b94e38c",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -2577,19 +2577,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 19,
+                  "startLine": 13,
                   "startColumn": 1,
-                  "endLine": 19,
-                  "endColumn": 29,
+                  "endLine": 13,
+                  "endColumn": 36,
                   "snippet": {
-                    "text": "RUN python -m pip install -r requirements.txt"
+                    "text": "RUN python -m pip install --default-timeout=1000 tensorflow==$TF_VERSION"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "5dc74fee466f1d532dabe3c9af8a33a8bddeff512edf4e24c2cbbaef84a5737f25f43aac134420b9f65b17116c08464a4a513f1ebfc4f1118dbb0526f7f86ccc_1"
+            "matchBasedId/v1": "e9401bcf5a8e513c9cb7c5c9bd1c4d55cca509c8cab2e4c56ce35454a0e26adc78b4578041394a2053f1931b3d02bd345e57530e54f67aca1cacd8e3e1073342_0"
           },
           "properties": {}
         },
@@ -2625,7 +2625,7 @@
           "properties": {}
         },
         {
-          "ruleId": "17d5230e-2636-33d9-b8c0-3a358b94e38c",
+          "ruleId": "ca5f57d8-233b-3e6d-b691-b1aefa9de6ef",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -2639,19 +2639,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 13,
+                  "startLine": 19,
                   "startColumn": 1,
-                  "endLine": 13,
-                  "endColumn": 36,
+                  "endLine": 19,
+                  "endColumn": 29,
                   "snippet": {
-                    "text": "RUN python -m pip install --default-timeout=1000 tensorflow==$TF_VERSION"
+                    "text": "RUN python -m pip install -r requirements.txt"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "e9401bcf5a8e513c9cb7c5c9bd1c4d55cca509c8cab2e4c56ce35454a0e26adc78b4578041394a2053f1931b3d02bd345e57530e54f67aca1cacd8e3e1073342_0"
+            "matchBasedId/v1": "5dc74fee466f1d532dabe3c9af8a33a8bddeff512edf4e24c2cbbaef84a5737f25f43aac134420b9f65b17116c08464a4a513f1ebfc4f1118dbb0526f7f86ccc_1"
           },
           "properties": {}
         },
@@ -2718,37 +2718,6 @@
           "properties": {}
         },
         {
-          "ruleId": "6b27fe50-6c9d-35ee-8119-835153103e43",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tools/docker/build_wheel.Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 61,
-                  "startColumn": 1,
-                  "endLine": 61,
-                  "endColumn": 36,
-                  "snippet": {
-                    "text": "RUN python -m pip install --default-timeout=1000 tensorflow==$TF_VERSION"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "e9401bcf5a8e513c9cb7c5c9bd1c4d55cca509c8cab2e4c56ce35454a0e26adc78b4578041394a2053f1931b3d02bd345e57530e54f67aca1cacd8e3e1073342_1"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "76dcaf6c-5298-30a8-b644-4d0243b1e3cf",
           "kind": "fail",
           "level": "warning",
@@ -2776,6 +2745,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "75530c8fdf234ada74c1daf52ebe08ef9d11bbf0262f92873a12a9d8a009fbcb9f2a112e582b5e32053704b923e42077e3dd597860439ff379809a101f94f430_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "6b27fe50-6c9d-35ee-8119-835153103e43",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tools/docker/build_wheel.Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 61,
+                  "startColumn": 1,
+                  "endLine": 61,
+                  "endColumn": 36,
+                  "snippet": {
+                    "text": "RUN python -m pip install --default-timeout=1000 tensorflow==$TF_VERSION"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "e9401bcf5a8e513c9cb7c5c9bd1c4d55cca509c8cab2e4c56ce35454a0e26adc78b4578041394a2053f1931b3d02bd345e57530e54f67aca1cacd8e3e1073342_1"
           },
           "properties": {}
         },
@@ -2966,37 +2966,6 @@
           "properties": {}
         },
         {
-          "ruleId": "d71e35d8-2698-3e28-b59e-47d3fa356379",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tools/docker/cpu_tests.Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 33,
-                  "startColumn": 1,
-                  "endLine": 33,
-                  "endColumn": 26,
-                  "snippet": {
-                    "text": "RUN pip install --default-timeout=1000 -r tensorflow-cpu.txt"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "75c0dffd435cb7e7fbd8977a23806cc9731c269ac0c71f68f7f3eb081b884e704418b02bc4182b4962f7004112422bdd221272ef4390b403447d859afb923d8f_1"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "cb20bbae-3cd1-3abb-b5f9-9eea6dd49ae1",
           "kind": "fail",
           "level": "warning",
@@ -3028,6 +2997,37 @@
           "properties": {}
         },
         {
+          "ruleId": "d71e35d8-2698-3e28-b59e-47d3fa356379",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tools/docker/cpu_tests.Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 1,
+                  "endLine": 33,
+                  "endColumn": 26,
+                  "snippet": {
+                    "text": "RUN pip install --default-timeout=1000 -r tensorflow-cpu.txt"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "75c0dffd435cb7e7fbd8977a23806cc9731c269ac0c71f68f7f3eb081b884e704418b02bc4182b4962f7004112422bdd221272ef4390b403447d859afb923d8f_1"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "d32a8cca-50d9-32fa-8248-51b102072198",
           "kind": "fail",
           "level": "warning",
@@ -3055,6 +3055,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "1f188187e0c9fd583c158b20216bcfd52c3396f10a23ebae6f32236ff4d10d574dbdc2dd79350d6db6d699efcfe70428a3fc926e5365fc9f0ca10fbbbd0d712e_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "af9ada0d-9a34-3287-8319-e76222c8043f",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tools/docker/dev_container.Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 1,
+                  "endLine": 11,
+                  "endColumn": 26,
+                  "snippet": {
+                    "text": "RUN pip install --default-timeout=1000 $TF_PACKAGE==$TF_VERSION"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "65628917bb25ad9a8bfcd9fa78f8a43109d100ce40fe0e67e2a5f4d5c8519db0deef0be745861aba513e2c06b78118968805242653ae6880efb42d0f7997f60f_0"
           },
           "properties": {}
         },
@@ -3117,37 +3148,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "f38c65e3c12d780ccc4a67cb61fa8c9285ce2a09689033c53a3d22a4fdb6c9e6520659dee099fad6d21428d045cf2cef7d7b430d657784338bdd94db15af89a2_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "af9ada0d-9a34-3287-8319-e76222c8043f",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tools/docker/dev_container.Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 11,
-                  "startColumn": 1,
-                  "endLine": 11,
-                  "endColumn": 26,
-                  "snippet": {
-                    "text": "RUN pip install --default-timeout=1000 $TF_PACKAGE==$TF_VERSION"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "65628917bb25ad9a8bfcd9fa78f8a43109d100ce40fe0e67e2a5f4d5c8519db0deef0be745861aba513e2c06b78118968805242653ae6880efb42d0f7997f60f_0"
           },
           "properties": {}
         },
@@ -3427,37 +3427,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "156799dbeeb3ad06a49a77776848417a2f6ca6536bab66e287db7b8ba8404dde9939a9ac681bf3c5be2ec164913c0a69e4db982e2a2f31baeb4c8ca909d99fb9_3"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "1d51f948-e2f5-3ed9-ae02-6a4bfaff3f6f",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "tools/docker/sanity_check.Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 96,
-                  "startColumn": 1,
-                  "endLine": 96,
-                  "endColumn": 21,
-                  "snippet": {
-                    "text": "RUN pip install --no-deps -e ."
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "f05f914700a1ac617d5e175765e10d2261c5c823eb9bf7b0d21b7d4baef80d7703aaa3ae8c70d1db270ccd424956f6bb02f0e0f05793c9cfc4577475791e600a_0"
           },
           "properties": {}
         },
